@@ -34,6 +34,6 @@
 
     </table>
     <a href="{{ route('homework.create') }}" >
-                <button type="submit">CSINÁLJ</button></a>
+                <button type="submit">Create new Homework</button></a>
 </body>
 </html>

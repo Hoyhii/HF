@@ -15,6 +15,9 @@
         <div>
             Points:<br>
             <input type="number" name="points" value="{{ $homework->points }}">
+            @error('points')
+                <p>{{$message}}</p>
+            @enderror
         </div>
         <div>
         Evaluation:<br>

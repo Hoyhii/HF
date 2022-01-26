@@ -24,7 +24,7 @@ class HomeUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'points' => 'required|int',
+            'points' => 'required|int|max:5',
             'evaluation' => 'required|string',
         ];
     }
