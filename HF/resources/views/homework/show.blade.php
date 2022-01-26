@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>The homework of {{ $homework->name }}</h1>
-    <p>{{ $homework->class }}</p>
-    <p>{{ $homework->url }}</p>
+    Class:<p>{{ $homework->class }}</p>
+    URL:<p>{{ $homework->url }}</p>
+    Evaluation:<p>{{ $homework->evaluation }}</p>
+    Points<p>{{ $homework->points }}</p>
+    <a href="{{ route('homework.index') }}" >
+                <button type="button">Vissza</button></a>
 </body>
 </html>

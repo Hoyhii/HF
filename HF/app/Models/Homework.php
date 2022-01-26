@@ -14,6 +14,8 @@ class Homework extends Model
         'name',
         'class',
         'url',
+        'evaluation',
+        'points',
     ];
 
     protected $visible = [

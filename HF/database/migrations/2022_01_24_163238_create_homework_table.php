@@ -18,8 +18,8 @@ class CreateHomeworkTable extends Migration
             $table->string('name');
             $table->integer('class');
             $table->text('url');
-            $table->text('evaluation');
-            $table->integer('points');
+            $table->text('evaluation')->nullable()->default(null);
+            $table->integer('points')->nullable()->default(null);
             $table->timestamps();
         });
     }

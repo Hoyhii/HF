@@ -17,8 +17,8 @@ class HomeworkFactory extends Factory
             'name' => $this->faker->name(),
             'class' => $this->faker->numberBetween(9,14),
             'url' => $this->faker->url(),
-            'evaluation' => "",
-            'points' => 0,
+            'evaluation' => null,
+            'points' => null,
         ];
     }
 }

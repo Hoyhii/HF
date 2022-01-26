@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\HomeworkRequest;
+use App\Http\Requests\HomeUpdateRequest;
 use App\Models\Homework;
 
 
@@ -21,7 +22,7 @@ class HomeworkController extends Controller
 
     public function store(HomeworkRequest $request)
     {
-        $adatok = $request->only(['name', 'class', 'url']);
+        $adatok = $request->only(['name', 'class', 'url','evaluation','points']);
 
         $homework = new Homework();
         $homework->fill($adatok);
@@ -39,9 +40,9 @@ class HomeworkController extends Controller
         return view('homework.edit', ['homework' =>$homework]);
     }
 
-    public function update(HomeworkRequest $request, Homework $homework)
+    public function update(HomeUpdateRequest $request, Homework $homework)
     {
-        $adatok = $request->only(['person', 'class', 'url']);
+        $adatok = $request->only(['evaluation','points']);
         $homework->fill($adatok);
         $homework->save();
         return redirect()->route('homework.show', $homework->id);

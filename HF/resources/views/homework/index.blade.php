@@ -13,6 +13,8 @@
             <th>Name</th>
             <th>Class</th>
             <th>Url</th>
+            <th>Evaluation</th>
+            <th>Points</th>
             <th>Operations</th>
         </tr>
     @foreach ($homework as $hwork)
@@ -22,11 +24,16 @@
             </td>
             <td>{{ $hwork->class }}</td>
             <td>{{ $hwork->url }}</td>
+            <td>{{ $hwork->evaluation }}</td>
+            <td>{{ $hwork->points }}</td>
             <td><form action="{{ route('homework.destroy', $hwork->id) }}" method="POST">
                 @csrf @method('DELETE')<button type="submit">Delete</button></form>
-            <form action="{{ route('edit')}}"><button type="submit" method="POST">Edit</button></form></td>
+            <form action="{{ route('homework.edit',$hwork->id)}}"><button type="submit" method="POST">Értékelés</button></form></td>
         </tr>
     @endforeach
+
     </table>
+    <a href="{{ route('homework.create') }}" >
+                <button type="submit">CSINÁLJ</button></a>
 </body>
 </html>

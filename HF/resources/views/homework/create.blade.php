@@ -32,6 +32,8 @@
             @enderror
         </div>
         <div>
+        <a href="{{ route('homework.index') }}" >
+                <button type="button">Vissza</button></a>
             <input type="submit" value="Create">
         </div>
     </form>

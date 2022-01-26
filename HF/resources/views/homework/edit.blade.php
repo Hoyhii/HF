@@ -8,21 +8,23 @@
 </head>
 <body>
     <h1>Edit</h1>
-    <form method='POST' action="{{ route('homework.update', $homework->id ) }}">
+    <form method='POST' action="{{ route('homework.update', ['homework'=>$homework->id] ) }}">
         @csrf
-        @method('PUT')
-        <input type="hidden" name="_method" value="PATCH">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        @method('PATCH')
+
         <div>
             Points:<br>
             <input type="number" name="points" value="{{ $homework->points }}">
         </div>
         <div>
         Evaluation:<br>
-            <input type="text" name="evaluation" value="{{ $homework->evaluation }}">
+            <input type="string" name="evaluation" value="{{ $homework->evaluation }}">
         </div>
         <div>
-            <input type="submit" value="feedback">
+        <td><a href="{{ route('homework.index') }}" >
+                <button type="button">Vissza</button></a>
+
+                <button type="submit">Értékelem</button></td>
         </div>
     </form>
 </body>

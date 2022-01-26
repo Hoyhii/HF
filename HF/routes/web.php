@@ -16,6 +16,5 @@ use App\Http\Controllers\HomeworkController;
 */
 
 Route::get('/', [ HomeController::class, 'index' ])->name('home');
-Route::get('/homework/edit', [ HomeController::class, 'edit' ])->name('edit');
 
 Route::resource('homework', HomeworkController::class);
